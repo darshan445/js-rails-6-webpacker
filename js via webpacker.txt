@@ -1,3 +1,8 @@
+prerequisite for adding js/jquery in rails 6 via webpacker
+	->gem 'webpacker', '~> 5.0' #make sure you added your webpacker gem in gemfile
+	->and also you need node and yarn 
+
+steps:
 1.run  "yarn add jquery"
 2.add following code to your config/webpack/environment.js
 const { environment } = require('@rails/webpacker')
