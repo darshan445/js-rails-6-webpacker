@@ -1,0 +1,25 @@
+1. add jquery cdn into application.js.erb
+2.run  "yarn add jquery"
+3.add following code to your config/webpack/environment.js
+	const webpack = require('webpack')
+	environment.plugins.prepend('Provide',
+  		new webpack.ProvidePlugin({
+    		$: 'jquery/src/jquery',
+    		jQuery: 'jquery/src/jquery'
+  	})
+)
+also refer:"https://stackoverflow.com/questions/54905026/how-to-add-jquery-third-party-plugin-in-rails-6-webpacker"
+
+4. goto application.js and add
+	require('jquery')
+5.create your custom js file into javascript/packs/custom.js
+6.now goto application.js and add require('packs/custom')
+7. goto custom file and do this:
+	$(document).ready(function() {
+   	 	//your code
+		console.log('test is working')
+   	});
+
+
+additional note:
+	restart the server:bin/webpack-dev-server 
